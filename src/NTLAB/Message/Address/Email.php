@@ -36,4 +36,41 @@ class Email extends Address
     {
         $this->type = static::TYPE;
     }
+
+    /**
+     * Get email address.
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        if (is_array($address = $this->getAddress()))
+        {
+            $email = array_keys($address);
+            $address = array_shift($email);
+        }
+
+        return $address;
+    }
+
+    /**
+     * Format an email address.
+     *
+     * @param string $email  The email address
+     * @param string $name   The people name
+     * @return string|array
+     */
+    public static function format($email, $name = null)
+    {
+      if (0 === strlen($name)) {
+          return $email;
+      } else {
+          return array($email => $name);
+      }
+    }
+
+    public static function create($email, $name = null)
+    {
+        return new self(self::format($email, $name));
+    }
 }
