@@ -33,6 +33,7 @@ interface SMSInterface
      *
      * @param string $number
      * @param string $message
+     * @param string $hash
      */
-    public function send($number, $message);
+    public function send($number, $message, $hash);
 }
