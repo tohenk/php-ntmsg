@@ -33,6 +33,24 @@ class Notification extends Message
 {
     const ID = "NOTIF";
 
+    const DELIVERY_INSTANT = 1;
+    const DELIVERY_DELAYED = 2;
+
+    /**
+     * @var int
+     */
+    protected $delivery = self::DELIVERY_DELAYED;
+
+    /**
+     * @var string
+     */
+    protected $code;
+
+    /**
+     * @var mixed
+     */
+    protected $referer;
+
     /**
      * @var mixed
      */
@@ -42,6 +60,75 @@ class Notification extends Message
     {
         $this->type = static::ID;
         $this->addAddressType(InternalAddress::TYPE);
+    }
+
+    /**
+     * Get notification delivery.
+     *
+     * @return int
+     */
+    public function getDelivery()
+    {
+        return $this->delivery;
+    }
+
+    /**
+     * Set notification delivery.
+     *
+     * @param int $delivery
+     * @return \NTLAB\Message\Message\Notification
+     */
+    public function setDelivery($delivery)
+    {
+        $this->delivery = $delivery;
+
+        return $this;
+    }
+
+    /**
+     * Get notification code.
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Set notification code.
+     *
+     * @param string $code
+     * @return \NTLAB\Message\Message\Notification
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Get notification referer.
+     *
+     * @return mixed
+     */
+    public function getReferer()
+    {
+        return $this->referer;
+    }
+
+    /**
+     * Set notification referer.
+     *
+     * @param mixed $referer
+     * @return \NTLAB\Message\Message\Notification
+     */
+    public function setReferer($referer)
+    {
+        $this->referer = $referer;
+
+        return $this;
     }
 
     /**
