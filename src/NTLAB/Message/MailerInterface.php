@@ -34,6 +34,7 @@ interface MailerInterface
      * @param string $to
      * @param string $subject
      * @param string $message
+     * @param string $hash
      */
-    public function send($to, $subject, $message);
+    public function send($to, $subject, $message, $hash);
 }

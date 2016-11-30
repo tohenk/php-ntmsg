@@ -57,7 +57,7 @@ class Email extends Transport
     public function send(Message $message, AddressInterface $to)
     {
         if (null !== $this->mailer) {
-            return $this->mailer->send($to->getAddress(), $message->getSubject(), $message->getBody());
+            return $this->mailer->send($to->getAddress(), $message->getSubject(), $message->getBody(), $message->getHash());
         }
     }
 }
