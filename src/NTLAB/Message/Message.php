@@ -128,12 +128,38 @@ class Message implements MessageInterface
     }
 
     /**
+     * Set message body.
+     *
+     * @param string $body
+     * @return \NTLAB\Message\Message
+     */
+    public function setBody($body)
+    {
+        $this->body = $body;
+
+        return $this;
+    }
+
+    /**
      * {@inheritDoc}
      * @see \NTLAB\Message\MessageInterface::getTime()
      */
     public function getTime()
     {
         return $this->time;
+    }
+
+    /**
+     * Set message time.
+     *
+     * @param int $time
+     * @return \NTLAB\Message\Message
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+
+        return $this;
     }
 
     /**
@@ -144,6 +170,19 @@ class Message implements MessageInterface
     public function getHash()
     {
         return $this->hash;
+    }
+
+    /**
+     * Set message hash.
+     *
+     * @param string $hash
+     * @return \NTLAB\Message\Message
+     */
+    public function setHash($hash)
+    {
+        $this->hash = $hash;
+
+        return $this;
     }
 
     /**
