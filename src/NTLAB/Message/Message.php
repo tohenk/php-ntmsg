@@ -59,6 +59,11 @@ class Message implements MessageInterface
     protected $hash;
 
     /**
+     * @var int
+     */
+    protected $attribute = 0;
+
+    /**
      * Constructor.
      *
      * @param string $message  Message body
@@ -181,6 +186,29 @@ class Message implements MessageInterface
     public function setHash($hash)
     {
         $this->hash = $hash;
+
+        return $this;
+    }
+
+    /**
+     * Get message attribute.
+     *
+     * @return int
+     */
+    public function getAttribute()
+    {
+        return $this->attribute;
+    }
+
+    /**
+     * Set message attribute.
+     *
+     * @param int $attribute
+     * @return \NTLAB\Message\Message
+     */
+    public function setAttribute($attribute)
+    {
+        $this->attribute = $attribute;
 
         return $this;
     }
