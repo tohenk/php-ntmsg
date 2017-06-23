@@ -34,6 +34,7 @@ interface SMSInterface
      * @param string $number
      * @param string $message
      * @param string $hash
+     * @param int $attribute
      */
-    public function send($number, $message, $hash);
+    public function send($number, $message, $hash, $attribute = null);
 }

@@ -57,7 +57,7 @@ class SMS extends Transport
     public function send(Message $message, AddressInterface $to)
     {
         if (null !== $this->sms) {
-            return $this->sms->send($to->getAddress(), $message->getBody(), $message->getHash());
+            return $this->sms->send($to->getAddress(), $message->getBody(), $message->getHash(), $message->getAttribute());
         }
     }
 }
