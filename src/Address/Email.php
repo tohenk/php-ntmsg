@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2021 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -44,12 +44,10 @@ class Email extends Address
      */
     public function getEmail()
     {
-        if (is_array($address = $this->getAddress()))
-        {
+        if (is_array($address = $this->getAddress())) {
             $email = array_keys($address);
             $address = array_shift($email);
         }
-
         return $address;
     }
 
@@ -65,7 +63,7 @@ class Email extends Address
       if (0 === strlen($name)) {
           return $email;
       } else {
-          return array($email => $name);
+          return [$email => $name];
       }
     }
 

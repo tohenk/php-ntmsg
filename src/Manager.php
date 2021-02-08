@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2021 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -43,7 +43,7 @@ class Manager
     /**
      * @var TransportInterface[]
      */
-    protected $transport = array();
+    protected $transport = [];
 
     /**
      * Get contact for current user.
@@ -64,7 +64,6 @@ class Manager
     public function setUser(ContactInterface $user)
     {
         $this->user = $user;
-
         return $this;
     }
 
@@ -87,7 +86,6 @@ class Manager
     public function setStorage(StorageInterface $storage)
     {
         $this->storage = $storage;
-
         return $this;
     }
 
@@ -101,7 +99,6 @@ class Manager
     {
         $transport->setManager($this);
         $this->transport[] = $transport;
-
         return $this;
     }
 
@@ -146,7 +143,6 @@ class Manager
                 }
             }
         }
-
         return $count;
     }
 }

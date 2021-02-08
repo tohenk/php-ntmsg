@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2021 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -51,7 +51,7 @@ class Message implements MessageInterface
     /**
      * @var array
      */
-    protected $addresTypes = array();
+    protected $addresTypes = [];
 
     /**
      * @var string
@@ -88,7 +88,6 @@ class Message implements MessageInterface
     protected function addAddressType($type)
     {
         $this->addresTypes[] = $type;
-
         return $this;
     }
 
@@ -119,7 +118,6 @@ class Message implements MessageInterface
     public function setSubject($subject)
     {
         $this->subject = $subject;
-
         return $this;
     }
 
@@ -141,7 +139,6 @@ class Message implements MessageInterface
     public function setBody($body)
     {
         $this->body = $body;
-
         return $this;
     }
 
@@ -163,7 +160,6 @@ class Message implements MessageInterface
     public function setTime($time)
     {
         $this->time = $time;
-
         return $this;
     }
 
@@ -186,7 +182,6 @@ class Message implements MessageInterface
     public function setHash($hash)
     {
         $this->hash = $hash;
-
         return $this;
     }
 
@@ -209,7 +204,6 @@ class Message implements MessageInterface
     public function setAttribute($attribute)
     {
         $this->attribute = $attribute;
-
         return $this;
     }
 
@@ -224,13 +218,12 @@ class Message implements MessageInterface
         if (empty($this->addresTypes)) {
             return $contact->getContactAddresses();
         } else {
-            $addresses = array();
+            $addresses = [];
             foreach ($this->addresTypes as $type) {
                 if ($address = $contact->getContactAddress($type)) {
                     $addresses[] = $address;
                 }
             }
-
             return $addresses;
         }
     }

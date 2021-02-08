@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2021 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -81,7 +81,6 @@ class Notification extends Message
     public function setDelivery($delivery)
     {
         $this->delivery = $delivery;
-
         return $this;
     }
 
@@ -104,7 +103,6 @@ class Notification extends Message
     public function setCode($code)
     {
         $this->code = $code;
-
         return $this;
     }
 
@@ -127,7 +125,6 @@ class Notification extends Message
     public function setReferer($referer)
     {
         $this->referer = $referer;
-
         return $this;
     }
 
@@ -150,7 +147,6 @@ class Notification extends Message
     public function setData($data)
     {
         $this->data = $data;
-
         return $this;
     }
 }
