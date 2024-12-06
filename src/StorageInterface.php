@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2021 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -35,7 +35,7 @@ interface StorageInterface
      * @param AddressInterface $to
      * @param AddressInterface $from
      */
-    public function addOutbox(Message $message, AddressInterface $to, AddressInterface $from = null);
+    public function addOutbox(Message $message, AddressInterface $to, ?AddressInterface $from = null);
 
     /**
      * Add inbound message to storage.
@@ -44,7 +44,7 @@ interface StorageInterface
      * @param AddressInterface $from
      * @param AddressInterface $to
      */
-    public function addInbox(Message $message, AddressInterface $from, AddressInterface $to = null);
+    public function addInbox(Message $message, AddressInterface $from, ?AddressInterface $to = null);
 
     /**
      * Add notification message to storage.

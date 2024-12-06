@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2021 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -44,7 +44,7 @@ class Email extends Transport
      *
      * @param MailerInterface $mailer
      */
-    public function __construct(MailerInterface $mailer = null)
+    public function __construct(?MailerInterface $mailer = null)
     {
         $this->mailer = $mailer;
     }
