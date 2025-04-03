@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2025 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -31,7 +31,7 @@ interface TransportInterface
     /**
      * Check if transporter can send to address.
      *
-     * @param AddressInterface $address
+     * @param \NTLAB\Message\AddressInterface $address
      * @return bool
      */
     public function canHandle(AddressInterface $address);
@@ -39,8 +39,8 @@ interface TransportInterface
     /**
      * Send message to address.
      *
-     * @param Message $message
-     * @param AddressInterface $to
+     * @param \NTLAB\Message\Message $message
+     * @param \NTLAB\Message\AddressInterface $to
      * @return bool
      */
     public function send(Message $message, AddressInterface $to);

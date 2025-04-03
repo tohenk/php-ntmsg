@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2025 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -24,40 +24,18 @@
 * SOFTWARE.
 */
 
-namespace NTLAB\Message\Transport;
+namespace NTLAB\Message\Message;
 
 use NTLAB\Message\Message;
-use NTLAB\Message\Transport;
-use NTLAB\Message\AddressInterface;
 use NTLAB\Message\Address\PhoneNumber;
-use NTLAB\Message\SMSInterface;
 
-class SMS extends Transport
+class Text extends Message
 {
-    /**
-     * @var SMSInterface
-     */
-    protected $sms = null;
+    const ID = "TEXT";
 
-    /**
-     * Constructor.
-     *
-     * @param SMSInterface $sms
-     */
-    public function __construct(?SMSInterface $sms = null)
+    protected function init()
     {
-        $this->sms = $sms;
-    }
-
-    public function canHandle(AddressInterface $address)
-    {
-        return null !== $this->sms && $address instanceof PhoneNumber ? true : false;
-    }
-
-    public function send(Message $message, AddressInterface $to)
-    {
-        if (null !== $this->sms) {
-            return $this->sms->send($to->getAddress(), $message->getBody(), $message->getHash(), $message->getAttribute());
-        }
+        $this->type = static::ID;
+        $this->addAddressType(PhoneNumber::TYPE);
     }
 }

@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2025 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -210,8 +210,8 @@ class Message implements MessageInterface
     /**
      * Get all supported addresses by the message.
      *
-     * @param ContactInterface $contact
-     * @return AddressInterface[]
+     * @param \NTLAB\Message\ContactInterface $contact
+     * @return \NTLAB\Message\AddressInterface[]
      */
     public function getSupportedAddresses(ContactInterface $contact)
     {

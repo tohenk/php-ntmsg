@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2025 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -31,24 +31,24 @@ use NTLAB\Message\Address\Internal as InternalAddress;
 class Manager
 {
     /**
-     * @var ContactInterface
+     * @var \NTLAB\Message\ContactInterface
      */
     protected $user;
 
     /**
-     * @var StorageInterface
+     * @var \NTLAB\Message\StorageInterface
      */
     protected $storage;
 
     /**
-     * @var TransportInterface[]
+     * @var \NTLAB\Message\TransportInterface[]
      */
     protected $transport = [];
 
     /**
      * Get contact for current user.
      *
-     * @return ContactInterface
+     * @return \NTLAB\Message\ContactInterface
      */
     public function getUser()
     {
@@ -58,7 +58,7 @@ class Manager
     /**
      * Set contact information for current user.
      *
-     * @param ContactInterface $user
+     * @param \NTLAB\Message\ContactInterface $user
      * @return \NTLAB\Message\Manager
      */
     public function setUser(ContactInterface $user)
@@ -70,7 +70,7 @@ class Manager
     /**
      * Get storage.
      *
-     * @return StorageInterface
+     * @return \NTLAB\Message\StorageInterface
      */
     public function getStorage()
     {
@@ -80,7 +80,7 @@ class Manager
     /**
      * Set message storage handler.
      *
-     * @param StorageInterface $storage
+     * @param \NTLAB\Message\StorageInterface $storage
      * @return \NTLAB\Message\Manager
      */
     public function setStorage(StorageInterface $storage)
@@ -92,7 +92,7 @@ class Manager
     /**
      * Add message transporter.
      *
-     * @param Transport $transport
+     * @param \NTLAB\Message\Transport $transport
      * @return \NTLAB\Message\Manager
      */
     public function addTransport(Transport $transport)
@@ -105,8 +105,8 @@ class Manager
     /**
      * Get the transporter capable of handling address.
      *
-     * @param AddressInterface $address
-     * @return TransportInterface
+     * @param \NTLAB\Message\AddressInterface $address
+     * @return NTLAB\Message\TransportInterface
      */
     protected function getTransporter(AddressInterface $address)
     {
@@ -120,8 +120,8 @@ class Manager
     /**
      * Send message.
      *
-     * @param Message $message
-     * @param ContactInterface $to
+     * @param \NTLAB\Message\Message $message
+     * @param \NTLAB\Message\ContactInterface $to
      * @throws \RuntimeException
      * @return int
      */

@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2025 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -31,26 +31,26 @@ interface StorageInterface
     /**
      * Add outbound message to storage.
      *
-     * @param Message $message
-     * @param AddressInterface $to
-     * @param AddressInterface $from
+     * @param \NTLAB\Message\Message $message
+     * @param \NTLAB\Message\AddressInterface $to
+     * @param \NTLAB\Message\AddressInterface $from
      */
     public function addOutbox(Message $message, AddressInterface $to, ?AddressInterface $from = null);
 
     /**
      * Add inbound message to storage.
      *
-     * @param Message $message
-     * @param AddressInterface $from
-     * @param AddressInterface $to
+     * @param \NTLAB\Message\Message $message
+     * @param \NTLAB\Message\AddressInterface $from
+     * @param \NTLAB\Message\AddressInterface $to
      */
     public function addInbox(Message $message, AddressInterface $from, ?AddressInterface $to = null);
 
     /**
      * Add notification message to storage.
      *
-     * @param Message $message
-     * @param AddressInterface $to
+     * @param \NTLAB\Message\Message $message
+     * @param \NTLAB\Message\AddressInterface $to
      */
     public function addNotification(Message $message, AddressInterface $to);
 }

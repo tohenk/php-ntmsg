@@ -1,14 +1,11 @@
-PHP Message Library
-===================
+# PHP Message Library
 
-Message type
-------------
+## Message type
 
   * Notification
   * Message
 
-Message transport
------------------
+## Message transport
 
   * Internal (like private message)
   * External (email, sms, etc)

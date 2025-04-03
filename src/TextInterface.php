@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2025 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -24,18 +24,17 @@
 * SOFTWARE.
 */
 
-namespace NTLAB\Message\Message;
+namespace NTLAB\Message;
 
-use NTLAB\Message\Message;
-use NTLAB\Message\Address\PhoneNumber;
-
-class SMS extends Message
+interface TextInterface
 {
-    const ID = "SMS";
-
-    protected function init()
-    {
-        $this->type = static::ID;
-        $this->addAddressType(PhoneNumber::TYPE);
-    }
+    /**
+     * Send text.
+     *
+     * @param string $number
+     * @param string $message
+     * @param string $hash
+     * @param int $attribute
+     */
+    public function send($number, $message, $hash, $attribute = null);
 }

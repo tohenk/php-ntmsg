@@ -3,7 +3,7 @@
 /*
  * The MIT License
 *
-* Copyright (c) 2016-2024 Toha <tohenk@yahoo.com>
+* Copyright (c) 2016-2025 Toha <tohenk@yahoo.com>
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of
 * this software and associated documentation files (the "Software"), to deal in
@@ -35,14 +35,14 @@ use NTLAB\Message\MailerInterface;
 class Email extends Transport
 {
     /**
-     * @var MailerInterface
+     * @var \NTLAB\Message\MailerInterface
      */
     protected $mailer = null;
 
     /**
      * Constructor.
      *
-     * @param MailerInterface $mailer
+     * @param \NTLAB\Message\MailerInterface $mailer
      */
     public function __construct(?MailerInterface $mailer = null)
     {
